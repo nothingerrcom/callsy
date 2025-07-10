@@ -18,21 +18,41 @@ export const authOptions: AuthOptions = {
                 password: { label: "Şifre", type: "password" },
             },
             async authorize(credentials): Promise<any> {
+                console.log("Giriş denemesi:", credentials?.username);
+
                 if (!credentials?.username || !credentials?.password) {
+                    console.log("Kimlik bilgileri eksik");
                     return null;
                 }
 
                 const user = await findUser(credentials.username);
-                if (!user) return null;
+                console.log("Bulunan kullanıcı:", user ? "var" : "yok");
 
-                const isValid = await bcrypt.compare(credentials.password, user.password);
-                if (!isValid) return null;
+                if (!user) {
+                    console.log("Kullanıcı bulunamadı");
+                    return null;
+                }
 
-                return {
-                    id: user.username,
-                    name: user.username,
-                    email: user.email
-                };
+                try {
+                    const isValid = await bcrypt.compare(credentials.password, user.password);
+                    console.log("Şifre kontrolü:", isValid ? "başarılı" : "başarısız");
+
+                    if (!isValid) {
+                        console.log("Şifre yanlış");
+                        return null;
+                    }
+
+                    const userToReturn = {
+                        id: user.username,
+                        name: user.username,
+                        email: user.email
+                    };
+                    console.log("Giriş başarılı, dönen kullanıcı:", userToReturn);
+                    return userToReturn;
+                } catch (error) {
+                    console.error("Şifre karşılaştırma hatası:", error);
+                    return null;
+                }
             },
         }),
     ],
