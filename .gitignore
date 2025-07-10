@@ -10,6 +10,25 @@
 !.yarn/releases
 !.yarn/versions
 
+# env files (can opt-in for committing if needed)
+.env*
+
+# package.json and package-lock.json
+package-lock.json
+package.json
+tsconfig.json
+src/app/layout.tsx
+src/app/page.tsx
+src/app/room/page.tsx
+src/app/room/[id]/page.tsx
+src/app/room/[id]/layout.tsx
+src/api/auth/[...nextauth]/route.ts
+src/api/register/route.ts
+src/lib/auth.tsx
+src/lib/room.ts
+src/lib/db.ts
+
+
 # testing
 /coverage
 
