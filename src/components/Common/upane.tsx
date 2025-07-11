@@ -77,7 +77,6 @@ export default function Upane({
                                 <div>
                                     <span className="text-sm mb-3 block">Bar Style</span>
                                     <div className="flex gap-4">
-                                        {/* Full Rounded Option */}
                                         <button
                                             onClick={() => setBarStyle('full-rounded')}
                                             className={`
@@ -91,7 +90,6 @@ export default function Upane({
                                             <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-white/80 rounded-[28px]" />
                                         </button>
 
-                                        {/* Right Rounded Option */}
                                         <button
                                             onClick={() => setBarStyle('right-rounded')}
                                             className={`
@@ -102,7 +100,7 @@ export default function Upane({
                                                 transition-all duration-200
                                             `}
                                         >
-                                            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-white/80 rounded-r-[28px]" />
+                                            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-white/80 rounded-tr-[28px] rounded-br-[28px]" />
                                         </button>
                                     </div>
                                 </div>
@@ -116,9 +114,7 @@ export default function Upane({
                             exit={{ opacity: 0, x: -20 }}
                             className="flex flex-col h-full"
                         >
-                            {/* Ana Panel */}
                             <div className="p-4 flex flex-col gap-3">
-                                {/* Durum Göstergesi */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: isExpanded ? 1 : 0 }}
@@ -137,7 +133,6 @@ export default function Upane({
                                     </div>
                                 </motion.div>
 
-                                {/* Katılımcı Listesi */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: isExpanded ? 1 : 0 }}
@@ -182,7 +177,6 @@ export default function Upane({
                                 </motion.div>
                             </div>
 
-                            {/* Profil Bölümü */}
                             <div className="absolute top-[220px] left-0 right-0 px-3 py-2">
                                 <div className="flex items-center gap-5">
                                     <div className={`
