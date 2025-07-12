@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react'
 import Peer from 'simple-peer'
 import { Instance } from 'simple-peer'
 
-const SOCKET_SERVER = 'https://nextrtcioserver-production.up.railway.app/'
+const SOCKET_SERVER = process.env.NEXT_PUBLIC_SOCKET_SERVER
 
 interface User {
     id: string;
