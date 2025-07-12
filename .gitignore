@@ -28,6 +28,9 @@ src/lib/auth.tsx
 src/lib/room.ts
 src/lib/db.ts
 
+# backup area
+backuper.js
+
 
 # testing
 /coverage
