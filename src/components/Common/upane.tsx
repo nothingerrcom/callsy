@@ -33,7 +33,6 @@ export default function Upane({
     const [isMobilePhone, setIsMobilePhone] = useState(false);
 
     useEffect(() => {
-        // Touch device and screen width detection
         const detectDevice = () => {
             const isTouchEnabled = ('ontouchstart' in window) || 
                            (navigator.maxTouchPoints > 0) || 
@@ -45,7 +44,6 @@ export default function Upane({
 
         detectDevice();
         
-        // Add resize listener
         window.addEventListener('resize', detectDevice);
         return () => window.removeEventListener('resize', detectDevice);
     }, []);
@@ -142,7 +140,7 @@ export default function Upane({
                                         setIsSettingsOpen(false);
                                         if (isTouchDevice) setIsExpanded(false);
                                     }}
-                                    className="p-1 hover:bg-white/10 rounded-full transition-colors"
+                                    className="p-1 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
                                 >
                                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M20.3284 11.0001V13.0001L7.50011 13.0001L10.7426 16.2426L9.32842 17.6568L3.67157 12L9.32842 6.34314L10.7426 7.75735L7.49988 11.0001L20.3284 11.0001Z" />
@@ -277,7 +275,6 @@ export default function Upane({
                             exit={{ opacity: 0 }}
                             className={`h-full w-full ${!isMobilePhone && 'flex flex-col'}`}
                         >
-                            {/* Desktop/Tablet Layout */}
                             {!isMobilePhone && (
                                 <>
                                     <div className="p-4 flex flex-col gap-3">
@@ -342,7 +339,7 @@ export default function Upane({
 
                                     <div className="mt-auto px-3 py-2">
                                         <div className="flex items-center gap-5">
-                                            <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-gray-500/40">
+                                            <div className={`relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-gray-500/40 ${barStyle === 'full-rounded' ? 'ml-[2px] -mt-[4px]' : ''}`}>
                                                 <Image
                                                     src={userProfile.imageUrl}
                                                     alt={userProfile.name}
@@ -367,7 +364,7 @@ export default function Upane({
                                                     </motion.span>
                                                 </div>
                                                 <button 
-                                                    className="ml-auto p-1 rounded-full hover:bg-white/10 transition-colors"
+                                                    className="ml-auto p-1 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         setIsSettingsOpen(true);
@@ -388,10 +385,8 @@ export default function Upane({
                                 </>
                             )}
 
-                            {/* Mobile Layout */}
                             {isMobilePhone && (
                                 <>
-                                    {/* Expanded Content */}
                                     {isExpanded && (
                                         <motion.div
                                             initial={{ opacity: 0 }}
@@ -399,7 +394,6 @@ export default function Upane({
                                             exit={{ opacity: 0 }}
                                             className="flex-1 flex"
                                         >
-                                            {/* Left Side - Rooms List */}
                                             <div className="flex-1 p-4">
                                                 <div className="space-y-2">
                                                     {displayRooms.map(room => (
@@ -423,7 +417,6 @@ export default function Upane({
                                                 </div>
                                             </div>
 
-                                            {/* Right Side - Settings */}
                                             <div className="w-[120px] p-4 flex flex-col items-center">
                                                 <button 
                                                     className="p-2 rounded-full hover:bg-white/10 transition-colors mb-2"
@@ -445,9 +438,7 @@ export default function Upane({
                                         </motion.div>
                                     )}
 
-                                    {/* Bottom Bar */}
                                     <div className="h-[60px] flex items-center justify-between px-4">
-                                        {/* Left Side - Status */}
                                         <div className="flex items-center gap-2">
                                             <div className={`w-2 h-2 rounded-full ${isActive ? 'bg-green-500' : 'bg-red-500'}`} />
                                             <span className="text-sm whitespace-nowrap opacity-50">
@@ -455,7 +446,6 @@ export default function Upane({
                                             </span>
                                         </div>
 
-                                        {/* Right Side - Profile */}
                                         <div className="flex items-center gap-3">
                                             <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-gray-500/40">
                                                 <Image

@@ -160,15 +160,12 @@ export default function RegisterPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
-            {/* Animated Background */}
             <div className="fixed inset-0 opacity-30">
                 <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
             </div>
 
-            {/* Register Container */}
             <div className={`relative z-10 w-full max-w-md transition-all duration-1000 ${isAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-                {/* Header */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center space-x-2 mb-4">
                         <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-xl">
@@ -182,7 +179,6 @@ export default function RegisterPage() {
                     <p className="text-gray-300">Sesli sohbet dünyasına katılın</p>
                 </div>
 
-                {/* Success Message */}
                 {success && (
                     <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg flex items-center space-x-2 text-green-200">
                         <CheckCircle className="w-5 h-5" />
@@ -190,7 +186,6 @@ export default function RegisterPage() {
                     </div>
                 )}
 
-                {/* Error Message */}
                 {error && (
                     <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg flex items-center space-x-2 text-red-200">
                         <AlertCircle className="w-5 h-5" />
@@ -198,10 +193,8 @@ export default function RegisterPage() {
                     </div>
                 )}
 
-                {/* Register Form */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
                     <div className="space-y-6">
-                        {/* Username Field */}
                         <div className="relative">
                             <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Kullanıcı Adı *
@@ -224,7 +217,6 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Email Field */}
                         <div className="relative">
                             <label className="block text-sm font-medium text-gray-300 mb-2">
                                 E-posta *
@@ -247,7 +239,6 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Password Field */}
                         <div className="relative">
                             <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Şifre *
@@ -291,7 +282,6 @@ export default function RegisterPage() {
                             )}
                         </div>
 
-                        {/* Confirm Password Field */}
                         <div className="relative">
                             <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Şifre Onayı *
@@ -321,7 +311,6 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Phone Field (Optional) */}
                         <div className="relative">
                             <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Telefon (İsteğe Bağlı)
@@ -338,7 +327,6 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Terms and Conditions */}
                         <div className="relative">
                             <label className="flex items-center space-x-2 cursor-pointer">
                                 <input
@@ -356,7 +344,6 @@ export default function RegisterPage() {
                             )}
                         </div>
 
-                        {/* Register Button */}
                         <button
                             onClick={handleRegister}
                             disabled={isLoading}
@@ -381,7 +368,6 @@ export default function RegisterPage() {
                     </div>
                 </div>
 
-                {/* Login Link */}
                 <div className="text-center mt-6">
                     <p className="text-gray-300">
                         Zaten hesabınız var mı?{" "}
