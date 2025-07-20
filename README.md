@@ -29,4 +29,4 @@ MIT License
 
 ---
 
-Made with ❤️ by [xReactive](https://github.com/xreactivee) & [HypeCaves]([https://github.com/HypeCaves](https://github.com/hypecavess))
+Made with ❤️ by [xReactive](https://github.com/xreactivee) & [HypeCaves](https://github.com/hypecavess)
